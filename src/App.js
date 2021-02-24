@@ -1,10 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
-import Todolist from './components/Todolist';
+import TodoList from './components/TodoList'
+import Input from './components/Input'
+import React, { useState } from 'react';
+import TodoItem from './components/TodoItem';
+
+
 function App() {
+  const [input, setInput] = useState({ desc: "", date: "" })
+  const [todos, setTodos] = useState([]);
+
+  const handleChange = (event) => {
+    setInput({ ...input, [event.target.name]: event.target.value })
+  }
+  const handleClick = () => {
+    if (input.desc !== "" && input.date !== "") {
+      setTodos([...todos, { desc: input.desc, date: input.date, checked: false }])
+      setInput({ desc: "", date: "" });
+    } else {
+      alert("Please fill out date and description")
+    }
+  }
+
+  const renderTodos = todos.map((item, index) => {
+    return (
+     <TodoItem key={index} index={index} item={item} setTodos={setTodos} todos={todos}/>
+    )
+  }
+  )
+
   return (
-    <div className="App">
-      <Todolist />
+    <div>
+      <Input desc={input.desc} date={input.date} handleChange={handleChange} handleClick={handleClick} />
+      <TodoList renderTodos={renderTodos} />
     </div>
   );
 }
