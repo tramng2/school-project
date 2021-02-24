@@ -1,37 +1,31 @@
-
-.header {
-  background: #000000;
-  padding: 30px;
-  color: #ffffff;
+.todo_title {
+  background-color: #000000;
   font-weight: bold;
+  color: white;
+  text-align: center;
+  padding: 10px;
 }
-.body {
-  margin-top: 3px;
-}
-.add_input{
-  border: 2px solid rgb(119, 117, 117);  
-  padding: 15px;
+
+.todo_addBox {
+  margin: 10px 5px 0 5px;
+  border: #000000 solid 1px;
   position: relative;
-  margin-top: 10px;
-}
-.render_list {
-  margin: auto;
-}
-.App {
+  padding: 15px ;
   text-align: center;
 }
-.add_input-title {
-  margin: 0;
-  background-color: #ffffff;
+.todo_tag{
   position: absolute;
-  top: -10px;
-  left: 10px;
-}
-table {
-  border-collapse: separate;
-  border-spacing: 100px 0;
+  background-color: #fff;
+  top: -25px;
+  left: 25px;
 }
 
-td {
-  padding: 10px 0;
+.table_list {
+  margin: 0 auto;
+  table-layout: fixed;
+  width: 700px;
+}
+
+.table_column{  
+  text-align: center;
 }
