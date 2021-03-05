@@ -14,7 +14,7 @@ function App() {
   }
   const handleClick = () => {
     if (input.desc !== "" && input.date !== "") {
-      setTodos([...todos, { desc: input.desc, date: input.date, checked: false }])
+      setTodos([...todos, input])
       setInput({ desc: "", date: "" });
     } else {
       alert("Please fill out date and description")
@@ -25,8 +25,7 @@ function App() {
     return (
      <TodoItem key={index} index={index} item={item} setTodos={setTodos} todos={todos}/>
     )
-  }
-  )
+  })
 
   return (
     <div>

@@ -13,6 +13,8 @@ const TodoItem = (props) => {
     const handleCheck = () => {
         if (!isChecked) {
             setStyle(completedStyle)
+        } else {
+            setStyle(null)
         }
         setCheck(!isChecked)
     }
